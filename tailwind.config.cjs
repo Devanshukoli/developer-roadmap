@@ -4,6 +4,7 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,svg}',
     './editor/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,svg}',
   ],
+  darkMode: 'class',
   future: {
     hoverOnlyWhenSupported: true,
   },

@@ -188,6 +188,11 @@ const gaPageIdentifier = Astro.url.pathname
       <GoogleAd />
     </slot>
 
+    <script is:inline>
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+
     {
       !import.meta.env.DEV && (
         <>

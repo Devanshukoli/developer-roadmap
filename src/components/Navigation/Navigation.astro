@@ -1,6 +1,7 @@
 ---
 import { Fragment } from 'react';
 import { AccountStreak } from '../AccountStreak/AccountStreak';
+import { ThemeToggler } from '../ThemeToggler';
 import Icon from '../AstroIcon.astro';
 import { NavigationDropdown } from '../NavigationDropdown';
 import { RoadmapDropdownMenu } from '../TopNavDropdowns/RoadmapDropdownMenu';
@@ -9,11 +10,11 @@ import { AccountDropdown } from './AccountDropdown';
 import { UpgradeProButton } from '../TopNavDropdowns/UpgradeProButton';
 ---
 
-<div class='bg-slate-900 py-5 text-white sm:py-8'>
+<div class='bg-white py-5 text-black dark:bg-slate-900 dark:text-white sm:py-8'>
   <nav class='container flex items-center justify-between'>
     <div class='flex items-center gap-5'>
       <a
-        class='flex items-center text-lg font-medium text-white'
+        class='flex items-center text-lg font-medium text-black dark:text-white'
         href='/'
         aria-label='roadmap.sh'
       >
@@ -22,7 +23,7 @@ import { UpgradeProButton } from '../TopNavDropdowns/UpgradeProButton';
 
       <a
         href='/ai'
-        class='group relative inline text-gray-400 hover:text-white sm:hidden'
+        class='group relative inline text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white sm:hidden'
       >
         AI Tutor
       </a>
@@ -38,9 +39,10 @@ import { UpgradeProButton } from '../TopNavDropdowns/UpgradeProButton';
 
     <ul class='hidden h-8 w-[172px] items-center justify-end gap-5 sm:flex'>
       <li data-guest-required class='hidden'>
-        <a href='/login' class='text-gray-400 hover:text-white'>Login</a>
+        <a href='/login' class='text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white'>Login</a>
       </li>
       <li class='flex items-center gap-2'>
+        <ThemeToggler client:only='react' />
         <AccountStreak client:only='react' />
         <AccountDropdown client:only='react' />
 

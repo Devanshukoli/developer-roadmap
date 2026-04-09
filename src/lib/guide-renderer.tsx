@@ -33,7 +33,7 @@ export interface MarkType {
 export type GuideRendererOptions = {};
 
 export class GuideRenderer {
-  private marksOrder = ['underline', 'bold', 'italic', 'textStyle', 'link'];
+  private marksOrder = ['underline', 'bold', 'italic', 'textStyle', 'link', 'explanation'];
 
   render(content: JSONContent) {
     const nodes = content.content || [];
@@ -296,6 +296,10 @@ export class GuideRenderer {
         {text}
       </a>
     );
+  }
+
+  private explanation(_: MarkType, text: JSX.Element): JSX.Element {
+    return <span className="text-blue-600 font-medium">{text}</span>;
   }
 
   private heading(node: JSONContent): JSX.Element {
